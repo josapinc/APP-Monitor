@@ -1,0 +1,37 @@
+<!--
+  Generated template for the PrincipalPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Monitor</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-grid>
+    <ion-row *ngFor="let item of _ps.temperatura">
+    <ion-col>
+    <p>Ultima Actualizaciòn:</p>
+    <ion-datetime displayFormat="MMM DD, h:mm A" [(ngModel)]="myDate"></ion-datetime>
+      <p>La temperatura actual en el cuarto es de: {{item.temperatura}}º</p>
+      <p>La humedad actual en el cuarto es de: {{item.humedad}}º</p>
+    </ion-col>
+    </ion-row>
+  </ion-grid>
+  <button ion-button full
+          (click)="mostrar_datos()">
+          Actualizar Datos
+ </button>
+
+</ion-content>
+
+
+
+<ion-nav id="nav" #content [root]="rootPage"></ion-nav>
